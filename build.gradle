@@ -112,5 +112,7 @@ uploadArchives {
 }
 
 nexusStaging {
+    username = ossrhUser
+    password = ossrhPassword
     stagingProfileId = '46bb69cdb326f7'
 }
