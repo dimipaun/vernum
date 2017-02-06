@@ -111,3 +111,6 @@ uploadArchives {
 	}
 }
 
+nexusStaging {
+    stagingProfileId = '46bb69cdb326f7'
+}
