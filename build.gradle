@@ -9,7 +9,7 @@
 
 group = "com.lattica.oss"
 archivesBaseName = "vernum"
-version = "1.0.0"
+version = "1.1.0"
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
