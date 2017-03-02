@@ -22,6 +22,7 @@ public class VersionNumber implements Comparable<VersionNumber> {
 	private int major;
 	private int minor;
 	private int revision;
+	private String suffix;
 
 	public VersionNumber(int major, int minor, int revision) {
 		this.major = major;
@@ -45,7 +46,21 @@ public class VersionNumber implements Comparable<VersionNumber> {
 				if (parts.length > 1) {
 					minor = Integer.parseInt(parts[1]);
 					if (parts.length > 2) {
-						revision = Integer.parseInt(parts[2]);
+						String last = parts[2];
+						try {
+							if (last.length() > 0) {
+								revision = Integer.parseInt(last);
+							}
+						} catch (NumberFormatException ex) {
+							int i = 0;
+							while (i < last.length() && Character.isDigit(last.indexOf(i))) i++;
+							if (i > 0) {
+								revision = Integer.parseInt(last.substring(0, i));
+							}
+							if (i < last.length()) {
+								suffix = last.substring(i);
+							}
+						}
 						if (parts.length > 3) {
 							throw new java.text.ParseException("version not well formatted: " + version, 0);
 						}
