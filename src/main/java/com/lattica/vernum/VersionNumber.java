@@ -105,7 +105,7 @@ public class VersionNumber implements Comparable<VersionNumber> {
 
 	@Override
 	public String toString() {
-		return major + "." + minor + "." + revision;
+		return major + "." + minor + "." + revision + (suffix != null ? suffix : "");
 	}
 
 	public static VersionNumber valueOf(String value) throws ParseException {
