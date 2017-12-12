@@ -8,7 +8,7 @@ A Java library for dealing with dot-separated version numbers (e.g. 4.3.1).
 Add it to your dependencies in your build.gradle file:
 
     dependencies {
-        classpath "com.lattica.oss:vernum:1.0.0"
+        classpath "com.lattica.oss:vernum:1.2.0"
     }
 
 
